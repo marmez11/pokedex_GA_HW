@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" 
+integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script defer src="/Day 1/pokemon_pokedex/server.js""></script>
+    <link rel="stylesheet" href="/Day_2/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="/Day_2/Skeleton-2.0.4/css/skeleton.css">
+    <title>Pokedex Show Info</title>
+</head>
+<style>
+   .Pokedex_header h1 {
+    border-radius: 30px;
+    color:white;
+    background-color: red;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+    .additional_info{
+        display: flex;
+    }
+    img{
+        border-radius: 30px;
+        background-color: black;
+    }
+    h2 {
+    border-radius: 30px;
+    text-align: center;
+    color:black;
+    background-color: gold;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+    .Pokemon_info_background {
+        display: grid;
+        justify-content: center;
+    border-radius: 30px;
+    background-color: red;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+    .pokemon_info_1{
+        border-radius: 30px;
+        background-color: white;
+        text-align: center;
+        border: 0.5rem outset black;
+    }
+    .pokemon_info_2{
+        border-radius: 30px;
+        background-color: white;
+        text-align: center;
+        border: 0.5rem outset black;
+    }
+    .pokemon_info_3{
+        border-radius: 30px;
+        background-color: white;
+        text-align: center;
+        border: 0.5rem outset black;
+    }
+    .pokemon_info_4{
+        border-radius: 30px;
+        background-color: white;
+        text-align: center;
+        border: 0.5rem outset black;
+    }
+    body {
+        background-color: gray;
+        }
+    .return_to_pokedex_btn {
+        font-size: 20px;
+    }
+    .delete_pokemon{font-size: 14px;}
+    .edit{font-size: 14px;}
+    .return_to_pokedex_btn{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div class="Pokedex_header"><h1>Pokedex Entry - <%=pokemon["name"] %></h1></div>
+    <div class="Pokemon_info_background">
+        <main class="pokemon_info_1">
+            <h2><b><em><%=pokemon.name %></em></b></h2>
+            <img src="<%=pokemon.img %>" />
+            <p><b>ID:</b> <u><b><em><%=pokemon.misc.classification %></em></b></u></p>
+            <a href="/pokemon/<%=parameter_val %>/edit">
+                <button class="Edit">Edit</button>
+               </a>
+               <form action="/pokemon/<%=parameter_val %>?_method=DELETE" method="POST">
+                <input class="delete_pokemon" type="submit" value="Delete" />
+                </form>
+        </main>
+    <div class="additional_info">
+        <div class="pokemon_info_2">
+            <h2>Pokemon Type</h2>
+            <p><b>Pokemon Type 1:</b> <u><b><em><%=pokemon['type'][0] %></em></b></u></p>
+            <p><b>Pokemon Type 2:</b> <u><b><em><%=pokemon['type'][1] %></em></b></u></p>
+        </div>
+        <div class="pokemon_info_3">
+            <h2>Pokemon Stats</h2>
+            <p><b>HP:</b> <u><b><em><%=pokemon.stats.hp %></em></b></u></p>
+            <p><b>Attack:</b> <u><b><em><%=pokemon.stats.attack %></em></b></u></p>
+            <p><b>Defense:</b> <u><b><em><%=pokemon.stats.defense %></em></b></u></p>
+            <p><b>Speed:</b> <u><b><em><%=pokemon.stats.speed %></em></b></u></p>
+            <p><b>Special Attack:</b> <u><b><em><%=pokemon.stats.spattack %></em></b></u></p>
+            <p><b>Special Defense:</b> <u><b><em><%=pokemon.stats.spdefense %></em></b></u></p>
+        </div>
+        <div class="pokemon_info_4">
+            <h2>Pokemon Damages</h2>
+            <p><b>Normal:</b> <u><b><em><%=pokemon.damages.normal %></em></b></u></p>
+            <p><b>Fire:</b> <u><b><em><%=pokemon.damages.fire %></em></b></u></p>
+            <p><b>Water:</b> <u><b><em><%=pokemon.damages.water %></em></b></u></p>
+            <p><b>Electric:</b> <u><b><em><%=pokemon.damages.electric %></em></b></u></p>
+            <p><b>Grass:</b> <u><b><em><%=pokemon.damages.grass %></em></b></u></p>
+            <p><b>Ice:</b> <u><b><em><%=pokemon.damages.ice %></em></b></u></p>
+            <p><b>Fight:</b> <u><b><em><%=pokemon.damages.fight %></em></b></u></p>
+            <p><b>Poison:</b> <u><b><em><%=pokemon.damages.poison %></em></b></u></p>
+            <p><b>Ground:</b> <u><b><em><%=pokemon.damages.ground %></em></b></u></p>
+            <p><b>Flying:</b> <u><b><em><%=pokemon.damages.flying %></em></b></u></p>
+            <p><b>Psychic:</b> <u><b><em><%=pokemon.damages.psychic %></em></b></u></p>
+            <p><b>Bug:</b> <u><b><em><%=pokemon.damages.bug %></em></b></u></p>
+            <p><b>Rock:</b> <u><b><em><%=pokemon.damages.rock %></em></b></u></p>
+            <p><b>Ghost:</b> <u><b><em><%=pokemon.damages.ghost %></em></b></u></p>
+            <p><b>Dragon:</b> <u><b><em><%=pokemon.damages.dragon %></em></b></u></p>
+            <p><b>Dark:</b> <u><b><em><%=pokemon.damages.dark %></em></b></u></p>
+            <p><b>Steel:</b> <u><b><em><%=pokemon.damages.steel %></em></b></u></p>
+        </div>
+    </div>
+    <button class="return_to_pokedex_btn"><a href="/pokemon">Return to Pokedex</a></button>
+    </div>
+</body>
+</html>

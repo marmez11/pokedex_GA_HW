@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Index</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" 
+integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script defer src="/Day 1/pokemon_pokedex/server.js"></script>
+    <link rel="stylesheet" href="/Day 1/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="/Day 1/Skeleton-2.0.4/css/skeleton.css">
+    <title>Pokedex</title>
+</head>
+<!-- Styling elements in css -->
+<!-- img {
+    display:flex;
+    flex-direction: row;
+    border-radius: 30px;
+    gap: 5px;
+    max-width: 100%;
+    width: 80px;  
+    height: auto;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5); 
+} -->
+<style>
+* {
+  box-sizing: border-box;
+}
+body{
+        background-color: gray;
+    }
+    img{
+        border-radius: 30px;
+    }
+.Pokedex_header {
+    border-radius: 30px;
+    text-align: center;
+    color:white;
+    background-color: red;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+.Pokemon_img {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    background-color: gold;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+    </style> 
+<body>
+    <div class="Pokedex_header"><h1>Pokedex</h1></div>
+    
+    <div class="Pokemon_img">
+        <% for(let i = 0; i < pokemon.length; i++) { %>
+            <img src="<%=pokemon[i].img %>" style="width:10%">
+            <p id="pokemon_title_text"><a href = "/pokemon/<%=i%>"><b><em><%=pokemon[i].name %></em></b></a></p> 
+        <% } %> 
+    </div>
+    <a href="/pokemon/new"><button type="button">Add New Pokemon</button></a> 
+</body>
+</html>

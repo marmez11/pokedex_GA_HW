@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Index File</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" 
+integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src="/Day 1/pokemon_pokedex/server.js"></script>
+    <link rel="stylesheet" href="/Day_2/Skeleton-2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="/Day_2/Skeleton-2.0.4/css/skeleton.css">
+</head>
+<body>
+    <div class="pokemon_create_new">
+        <h1>Creating new pokemon</h1>
+        <form action="/pokemon" method="post">
+            <input class="name" type="text" placeholder="Enter a Name of a Pokemon...">
+            <br>
+            <input class="id" type="text" placeholder="Enter a identification description of a Pokemon (Example: ... Dragon Pokemon">
+            <br>
+            <input class="type" type="text" placeholder="Enter an type for the Pokemon (Example: ... Grass)">
+            <br>
+            <input class="hp" type="number" placeholder="Enter hp points for pokemon....">
+            <br>
+            <input class="attack" type="number" placeholder="Enter attack points for pokemon....">
+            <br>
+            <input class="defense" type="number" placeholder="Enter defense points for pokemon....">
+            <br>
+            <input class="speed" type="number" placeholder="Enter speed points for pokemon....">
+            <br>
+            <label>upload pokemon image</label>
+      <input
+        type="file"
+        name="img"
+        accept="image/*"
+        placeholder="upload poke pic"
+      />
+            <br>
+            <a href="/pokemon"><input type="submit" value="Add New Pokemon" /></a>
+        </form>
+    </div>
+</body>
+</html>
