@@ -15,19 +15,19 @@ integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="ano
     <div class="pokemon_create_new">
         <h1>Creating new pokemon</h1>
         <form action="/pokemon" method="post">
-            <input class="name" type="text" placeholder="Enter a Name of a Pokemon...">
+            <input name="name" type="text" placeholder="Enter a Name of a Pokemon...">
             <br>
-            <input class="id" type="text" placeholder="Enter a identification description of a Pokemon (Example: ... Dragon Pokemon">
+            <input name="id" type="text" placeholder="Enter a identification description of a Pokemon (Example: ... Dragon Pokemon">
             <br>
-            <input class="type" type="text" placeholder="Enter an type for the Pokemon (Example: ... Grass)">
+            <input name="type" type="text" placeholder="Enter an type for the Pokemon (Example: ... Grass)">
             <br>
-            <input class="hp" type="number" placeholder="Enter hp points for pokemon....">
+            <input name="hp" type="number" placeholder="Enter hp points for pokemon....">
             <br>
-            <input class="attack" type="number" placeholder="Enter attack points for pokemon....">
+            <input name="attack" type="number" placeholder="Enter attack points for pokemon....">
             <br>
-            <input class="defense" type="number" placeholder="Enter defense points for pokemon....">
+            <input name="defense" type="number" placeholder="Enter defense points for pokemon....">
             <br>
-            <input class="speed" type="number" placeholder="Enter speed points for pokemon....">
+            <input name="speed" type="number" placeholder="Enter speed points for pokemon....">
             <br>
             <label>upload pokemon image</label>
       <input
@@ -37,7 +37,7 @@ integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="ano
         placeholder="upload poke pic"
       />
             <br>
-            <a href="/pokemon"><input type="submit" value="Add New Pokemon" /></a>
+            <button><input type="submit" value="Add New Pokemon" /></button>
         </form>
     </div>
 </body>

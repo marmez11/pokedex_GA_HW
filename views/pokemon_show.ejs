@@ -87,10 +87,12 @@ box-shadow: 1px 2px 3px rgba(0,0,0,.5);
         <main class="pokemon_info_1">
             <h2><b><em><%=pokemon.name %></em></b></h2>
             <img src="<%=pokemon.img %>" />
-            <p><b>ID:</b> <u><b><em><%=pokemon.misc.classification %></em></b></u></p>
+            <!--<p><b>ID:</b> <u><b><em><%=pokemon.misc.classification %></em></b></u></p>-->
             <a href="/pokemon/<%=parameter_val %>/edit">
+                <br>
                 <button class="Edit">Edit</button>
                </a>
+               <br>
                <form action="/pokemon/<%=parameter_val %>?_method=DELETE" method="POST">
                 <input class="delete_pokemon" type="submit" value="Delete" />
                 </form>
@@ -98,8 +100,9 @@ box-shadow: 1px 2px 3px rgba(0,0,0,.5);
     <div class="additional_info">
         <div class="pokemon_info_2">
             <h2>Pokemon Type</h2>
-            <p><b>Pokemon Type 1:</b> <u><b><em><%=pokemon['type'][0] %></em></b></u></p>
-            <p><b>Pokemon Type 2:</b> <u><b><em><%=pokemon['type'][1] %></em></b></u></p>
+            <p><b>Pokemon Type 1:</b> <u><b><em><%=pokemon['type'] %></em></b></u></p>
+            <!--<p><b>Pokemon Type 1:</b> <u><b><em><%=pokemon['type'][0] %></em></b></u></p>
+            <p><b>Pokemon Type 2:</b> <u><b><em><%=pokemon['type'][1] %></em></b></u></p>-->
         </div>
         <div class="pokemon_info_3">
             <h2>Pokemon Stats</h2>
@@ -107,10 +110,10 @@ box-shadow: 1px 2px 3px rgba(0,0,0,.5);
             <p><b>Attack:</b> <u><b><em><%=pokemon.stats.attack %></em></b></u></p>
             <p><b>Defense:</b> <u><b><em><%=pokemon.stats.defense %></em></b></u></p>
             <p><b>Speed:</b> <u><b><em><%=pokemon.stats.speed %></em></b></u></p>
-            <p><b>Special Attack:</b> <u><b><em><%=pokemon.stats.spattack %></em></b></u></p>
-            <p><b>Special Defense:</b> <u><b><em><%=pokemon.stats.spdefense %></em></b></u></p>
+            <!--<p><b>Special Attack:</b> <u><b><em><%=pokemon.stats.spattack %></em></b></u></p>
+            <p><b>Special Defense:</b> <u><b><em><%=pokemon.stats.spdefense %></em></b></u></p>-->
         </div>
-        <div class="pokemon_info_4">
+        <!--<div class="pokemon_info_4">
             <h2>Pokemon Damages</h2>
             <p><b>Normal:</b> <u><b><em><%=pokemon.damages.normal %></em></b></u></p>
             <p><b>Fire:</b> <u><b><em><%=pokemon.damages.fire %></em></b></u></p>
@@ -129,7 +132,7 @@ box-shadow: 1px 2px 3px rgba(0,0,0,.5);
             <p><b>Dragon:</b> <u><b><em><%=pokemon.damages.dragon %></em></b></u></p>
             <p><b>Dark:</b> <u><b><em><%=pokemon.damages.dark %></em></b></u></p>
             <p><b>Steel:</b> <u><b><em><%=pokemon.damages.steel %></em></b></u></p>
-        </div>
+        </div>-->
     </div>
     <button class="return_to_pokedex_btn"><a href="/pokemon">Return to Pokedex</a></button>
     </div>

@@ -10,7 +10,7 @@
  <body>
   <h1>Edit pokemon</h1>
   
-  <form action="/pokemon/<%=parameter_val %>?_method= PUT" method="post">
+  <form action="/pokemon/<%=parameter_val %>?_method=PUT" method="post">
    <input
     type="text"
     name="name"
@@ -23,9 +23,9 @@
     placeholder="add poke type"
     value="<%pokemon.type %>"
    />
-   <input type="number" name="HP" placeholder="HP" />
-   <input type="number" name="Attack" placeholder="attack" />
-   <input type="number" name="Defense" placeholder="Defense" />
+   <input type="number" name="stats[hp]" placeholder="HP" />
+   <input type="number" name="stats[attack]" placeholder="attack" />
+   <input type="number" name="stats[defense]" placeholder="Defense" />
    <label>upload pokemon image</label>
    <input
     type="file"
